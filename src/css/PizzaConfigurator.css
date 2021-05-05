@@ -1,0 +1,48 @@
+fieldset {
+  margin-top: 10px;
+  text-align: left;
+  border-radius: 3px;
+  color: #333;
+  border: 1px dotted #aaa;
+}
+legend {
+  text-align: left;
+  background-color: #fff;
+}
+
+.PizzaConfigurator {
+  padding: 10px 5px 15px;
+  box-sizing: border-box;
+}
+.PizzaConfigurator__title {
+  font-size: 20px;
+  color: #333;
+}
+.PizzaConfigurator__row {
+  display: flex;
+  justify-content: space-between;
+}
+.PizzaConfigurator__create-order {
+  margin: 20px auto 0;
+  display: block;
+  padding: 5px 10px;
+  color: #333;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid currentColor;
+  background-color: transparent;
+  transition: .3s;
+  cursor: pointer;
+}
+.PizzaConfigurator__create-order:focus {
+  color: #111;
+  background-color: #0001;
+}
+.PizzaConfigurator__create-order:hover {
+  color: #111;
+  background-color: #0003;
+}
+.PizzaConfigurator__create-order:active {
+  color: #eee;
+  background-color: #000a;
+}

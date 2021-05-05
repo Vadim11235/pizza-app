@@ -1,0 +1,33 @@
+.Order {
+  margin-top: 20px;
+  color: #444;
+  padding: 10px 20px 15px;
+  box-shadow: 0 -2px 3px #0005;
+  box-sizing: border-box;
+}
+.Order__title {
+  margin-bottom: 5px;
+  font-size: 17px;
+  color: #555;
+}
+.Order__title > strong {
+  color: #111;
+  font-size: 16px;
+}
+.Order__text {
+  font-size: 16px;
+  color: inherit;
+}
+.Order__splitter {
+  margin-left: 5px;
+  margin-right: 5px;
+  vertical-align: middle;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.Order__splitter:last-child {
+  display: none;
+}

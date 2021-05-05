@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
+import PIZZA from './utils/constants';
+import './css/App.css';
 
-function App() {
+import PizzaConfigurator from './components/PizzaConfigurator';
+import Order from './components/Order';
+
+
+export default function App() {
+  const [order, setOrder] = useState({
+    size: PIZZA.SIZE[0].value,
+    crust: PIZZA.CRUST[0].value,
+    sauce: PIZZA.SAUCE[0].value,
+    cheese: [PIZZA.CHEESE[0].value],
+    vegs: [PIZZA.VEGS[0].value],
+    meat: [],
+    price: null
+  });
+
+  const makeOrder = (key, value) => {
+    const copy = Object.assign({}, order);
+    copy[key] = value;
+    setOrder(copy);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PizzaConfigurator order={order} makeOrder={makeOrder} />
+      {order.price ? <Order order={order} /> : null }
     </div>
   );
 }
-
-export default App;
