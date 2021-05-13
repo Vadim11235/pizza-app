@@ -29,7 +29,7 @@ describe("Fieldset checkboxes", () => {
     }
   });
 
-  // Arrange Act Assert
+/*  // Arrange Act Assert
   describe("Fieldset Click", () => {
     it("correctly change", () => {
       // Arrange
@@ -54,7 +54,7 @@ describe("Fieldset checkboxes", () => {
       // console.dir(secondRadio.checked);
       expect(changeHandler).toHaveBeenCalled();
     });
-  });
+  });*/
 
 
 });
