@@ -26,7 +26,7 @@ export default function App() {
   document.title = `PRODUCTION - ${document.title}`;
   return (
     <div className="App">
-      <button onClick={() => throw new Error('Some error')}>Break the world</button>
+      <button onClick={() => {throw new Error('Some error')}}>Break the world</button>
       <PizzaConfigurator order={order} makeOrder={makeOrder} />
       {order.price ? <Order order={order} /> : null }
     </div>
