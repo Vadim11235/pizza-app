@@ -54,7 +54,3 @@ describe("Fieldset checkboxes", () => {
       expect(changeHandler).toHaveBeenCalled();
     });
   });
-
-
-
-});
