@@ -13,6 +13,8 @@ import Fieldset from './components/Fieldset';
 
 
 describe("Fieldset checkboxes", () => {
+
+
   it("correctly render", () => {
     const { queryByDisplayValue } = render(<Fieldset
       type="radio"
@@ -26,7 +28,6 @@ describe("Fieldset checkboxes", () => {
       expect(queryByDisplayValue(PIZZA.SIZE[i].key)).toBeTruthy();
     }
   });
-
 
   // Arrange Act Assert
   describe("Fieldset Click", () => {
@@ -54,3 +55,6 @@ describe("Fieldset checkboxes", () => {
       expect(changeHandler).toHaveBeenCalled();
     });
   });
+
+
+});
