@@ -28,7 +28,7 @@ export default function App() {
     <div className="App">
       <PizzaConfigurator order={order} makeOrder={makeOrder} />
       {order.price ? <Order order={order} /> : null }
-      <button onClick={() => {throw new Error('PRODUCTION Error')}}>Break the App</button>
+      <button onClick={() => {throw new Error('STAGING Error')}}>Break the App</button>
     </div>
   );
 }
