@@ -23,7 +23,7 @@ export default function App() {
     setOrder(copy);
   }
 
-  document.title = `${STAGING} - ${document.title}`;
+  document.title = `STAGING - ${document.title}`;
   return (
     <div className="App">
       <h1>STAGING</h1>
