@@ -23,6 +23,7 @@ export default function App() {
     setOrder(copy);
   }
 
+  document.title = `PRODUCTION - ${document.title}`;
   return (
     <div className="App">
       <PizzaConfigurator order={order} makeOrder={makeOrder} />
