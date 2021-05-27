@@ -5,7 +5,7 @@ import { render, fireEvent } from '@testing-library/react'
 import { App } from './app'
 
 describe('App', () => {
-	describe('about link click', () => {
+	describe('pay link click', () => {
 		it('navigates to pay page', () => {
 			const history = createMemoryHistory();
             const { container, queryByText } = render(
