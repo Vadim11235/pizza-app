@@ -1,7 +1,8 @@
 import React from 'react'
-import { Router } from 'react-router-dom'
+import { Router, BrowserRouter } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import { render, fireEvent } from '@testing-library/react'
+import { AuthProvider } from "./components/AuthContext";
 import App from '../App'
 
 describe('App', () => {
@@ -9,9 +10,11 @@ describe('App', () => {
 		it('navigates to pay page', () => {
 			const history = createMemoryHistory();
             const { container, queryByText } = render(
-                <Router history={history}>
-                    <App />
-                </Router>
+                <AuthProvider>
+                    <Router history={history}>
+                        <App />
+                    </Router>
+                </AuthProvider>
             );
 		  
 			// Проверяем, что мы начинаем на странице заказа
@@ -31,9 +34,11 @@ describe('App', () => {
             history.push('/some/bad/route');
 
             const { container } = render(
-                <Router history={history}>
-                    <App />
-                </Router>
+                <AuthProvider>
+                    <BrowserRouter history={history}>
+                        <App />
+                    </BrowserRouter>
+                </AuthProvider>
             );
 
             expect(container.innerHTML).toMatch('404 page');
