@@ -1,8 +1,8 @@
 import React from 'react'
-import { Router, BrowserRouter } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import { render, fireEvent } from '@testing-library/react'
-import { AuthProvider } from "./components/AuthContext";
+import { AuthProvider } from "../components/AuthContext";
 import App from '../App'
 
 describe('App', () => {
@@ -35,9 +35,9 @@ describe('App', () => {
 
             const { container } = render(
                 <AuthProvider>
-                    <BrowserRouter history={history}>
+                    <Router history={history}>
                         <App />
-                    </BrowserRouter>
+                    </Router>
                 </AuthProvider>
             );
 
