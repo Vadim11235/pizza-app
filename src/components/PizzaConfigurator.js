@@ -1,5 +1,5 @@
 import '../css/PizzaConfigurator.css';
-import PIZZA from '../utils/constants';
+import { PIZZA } from '../utils/constants';
 import arrLikeOrder from '../utils/arrLikeOrder';
 import calcPrice from '../utils/calcPrice';
 

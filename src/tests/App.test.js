@@ -1,9 +1,9 @@
 import { render, fireEvent } from '@testing-library/react';
 
-import App from './App';
-import PIZZA from './utils/constants';
-import arrLikeOrder from './utils/arrLikeOrder';
-import Fieldset from './components/Fieldset';
+import App from '../App';
+import PIZZA from '../utils/constants';
+import arrLikeOrder from '../utils/arrLikeOrder';
+import Fieldset from '../components/Fieldset';
 
 // it('renders learn react link', () => {
 //   render(<App />);

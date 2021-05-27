@@ -1,3 +1,5 @@
+import PAGES from '../components/Pages';
+
 const PIZZA = {
   SIZE: [
     {key: 'size-30', title: '30 см', value: 30},
@@ -29,5 +31,47 @@ const PIZZA = {
     {key: 'meat-pepper', title: 'Ветчина', value: 'ham'}
   ]
 };
+const LINKS = [
+  {
+    orderNav: 2,
+    isAuthed: false,
+    path: '/sign-up',
+    component: PAGES.PageReg,
+    title: 'Sign up',
+  }, {
+    orderNav: 1,
+    isAuthed: false,
+    path: '/sign-in',
+    component: PAGES.PageLogin,
+    title: 'Sign in',
+  }, {
+    isHidden: true,
+    path: '/:privatePage/sign-in',
+    component: PAGES.PageLogin,
+    title: 'Sign in',
+  }, {
+    orderNav: 5,
+    isPrivate: true,
+    path: '/orders',
+    component: PAGES.PageOrders,
+    title: 'Orders',
+  }, {
+    orderNav: 4,
+    path: '/pay',
+    component: PAGES.PagePay,
+    title: 'Pay',
+  }, {
+    orderNav: 3,
+    isExact: true,
+    path: '/',
+    component: PAGES.PizzaCreator,
+    title: 'Order',
+  }, {
+    isHidden: true,
+    path: '',
+    component: PAGES.PageNotFound,
+    title: '404',
+  }
+];
 
-export default PIZZA;
+export { PIZZA, LINKS };
