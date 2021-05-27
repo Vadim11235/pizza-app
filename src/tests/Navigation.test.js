@@ -2,7 +2,7 @@ import React from 'react'
 import { Router } from 'react-router-dom'
 import { createMemoryHistory } from 'history'
 import { render, fireEvent } from '@testing-library/react'
-import { App } from './app'
+import { App } from '../App'
 
 describe('App', () => {
 	describe('pay link click', () => {
