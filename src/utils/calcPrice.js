@@ -1,4 +1,4 @@
-import PIZZA from './constants';
+import { PIZZA } from './constants';
 
 export default function calcPrice(order) {
   let price = 200;

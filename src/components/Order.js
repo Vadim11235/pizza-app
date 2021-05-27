@@ -1,5 +1,5 @@
 import React from 'react';
-import PIZZA from '../utils/constants';
+import { PIZZA } from '../utils/constants';
 import '../css/Order.css';
 
 export default function Order({order}) {

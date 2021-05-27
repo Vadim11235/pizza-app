@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
 import './css/index.css';
 import App from './App';
+import { AuthProvider } from "./components/AuthContext";
 import reportWebVitals from './reportWebVitals';
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
+
 
 Sentry.init({
   dsn: "https://cf4bd5f792a145dfba3d2dddd14e21b0@o657195.ingest.sentry.io/5763063",
@@ -17,7 +20,11 @@ Sentry.init({
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
