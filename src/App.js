@@ -25,10 +25,10 @@ export default function App() {
             return (
               el.isPrivate ? <PrivateRoute {...data} />
                 : <Route {...data} />
-            );
+            )
           })
         }
 			</Switch>
     </>
-  );
+  )
 }
