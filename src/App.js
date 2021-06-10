@@ -23,12 +23,6 @@ export default function App() {
   }
 
   document.title = `PRODUCTION - ${document.title}`;
-  return (
-    <div className="App">
-      <PizzaConfigurator order={order} makeOrder={makeOrder} />
-      {order.price ? <Order order={order} /> : null }
-      <button onClick={() => {throw new Error('PRODUCTION Error')}}>Break the App</button>
-    </div>
 
   return (
     <>
@@ -50,11 +44,10 @@ export default function App() {
             return (
               el.isPrivate ? <PrivateRoute {...data} />
                 : <Route {...data} />
-            );
+            )
           })
         }
 			</Switch>
     </>
-
   );
 }
