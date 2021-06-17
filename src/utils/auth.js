@@ -1,7 +1,8 @@
+import { useEffect } from "react";
 import { usePOST } from "./useAJAX";
 
-export const Auth = () => {
-  const { isLoading, xhr, isError, data, error } = usePOST(
+const AuthAdmin = () => {
+  const { isLoading, isError, data, error, sendData } = usePOST(
     'http://localhost:8080/v2/admin-auth/login',
     {
       email: "example@email.com",
@@ -9,15 +10,53 @@ export const Auth = () => {
     }
   );
 
-  if (isError) {
-    return <>Error: {JSON.stringify(error)}</>;
+  useEffect(() => {
+    sendData();
+  }, []);
+
+  if(isLoading) {
+    return <div>Loading..</div>;
   }
 
-  if (isLoading) {
-    return <>Loading...</>;
+  if(isError) {
+    return <div>Error: <span>{error}</span></div>;
   }
 
-  console.log(xhr);
-
-  return <>{JSON.stringify(data)}</>;
+  localStorage.setItem('token', data.token);
+  return <div>Token: {data.token}</div>;
 };
+
+const PostAddIngridient = ({image, preview}) => {
+  console.log(image, preview);
+  const { isLoading, isError, data, error, sendData } = usePOST(
+    'http://localhost:8080/v2/ingredients',
+    {
+      name: 'test',
+      slug: 'тест',
+      price: 20,
+      category: 'sauces',
+      image: image,
+      thumbnail: preview
+    },
+    {
+      Authorization: 'Bearer ' + localStorage.getItem('token')
+    }
+  );
+
+  useEffect(() => {
+    sendData();
+  }, []);
+
+  if(isLoading) {
+    return <div>Loading..</div>;
+  }
+
+  if(isError) {
+    return <div>Error: <span>{error}</span></div>;
+  }
+
+  console.log(data);
+  return <div>Успешно добавлен: {data.id}</div>;
+};
+
+export {AuthAdmin, PostAddIngridient};

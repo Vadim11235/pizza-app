@@ -3,6 +3,7 @@ import { PIZZA } from '../utils/constants';
 import PizzaConfigurator from './PizzaConfigurator';
 import {Registration, Login} from './Forms';
 import Order from './Order';
+import { AddIngridient } from './AddIngridient';
 
 const CreatePizzaPage = () => {
     const [order, setOrder] = useState({
@@ -31,6 +32,7 @@ const CreatePizzaPage = () => {
 };
 
 const PAGES = {
+    PageIngridient: () => <AddIngridient />,
     PageLogin: () => <Login />,
     PageReg: () => <Registration />,
     PizzaCreator: () => CreatePizzaPage(),

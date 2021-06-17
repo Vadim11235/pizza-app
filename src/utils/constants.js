@@ -50,6 +50,11 @@ const LINKS = [
     component: PAGES.PageLogin,
     title: 'Sign in',
   }, {
+    isHidden: false,
+    path: '/:privatePage/add-ingridient',
+    component: PAGES.PageIngridient,
+    title: 'Add Ingridient',
+  }, {
     orderNav: 5,
     isPrivate: true,
     path: '/orders',
