@@ -8,15 +8,15 @@ import './css/App.css';
 
 export default function App() {
 
-  const [order, setOrder] = useState({
-    size: PIZZA.SIZE[0].value,
-    crust: PIZZA.CRUST[0].value,
-    sauce: PIZZA.SAUCE[0].value,
-    cheese: [PIZZA.CHEESE[0].value],
-    vegs: [PIZZA.VEGS[0].value],
-    meat: [],
-    price: null
-  });
+  // const [order, setOrder] = useState({
+  //   size: PIZZA.SIZE[0].value,
+  //   crust: PIZZA.CRUST[0].value,
+  //   sauce: PIZZA.SAUCE[0].value,
+  //   cheese: [PIZZA.CHEESE[0].value],
+  //   vegs: [PIZZA.VEGS[0].value],
+  //   meat: [],
+  //   price: null
+  // });
 
   // const makeOrder = (key, value) => {
   //   const copy = Object.assign({}, order);
