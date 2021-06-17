@@ -2,7 +2,6 @@ import { Route, Switch } from "react-router-dom";
 import Navigation from './components/Navigation';
 import { LINKS } from './utils/constants';
 import { PrivateRoute } from "./components/PrivateRoute";
-import { Auth } from "./utils/auth";
 import './css/App.css';
 
 export default function App() {
@@ -11,7 +10,6 @@ export default function App() {
 
   return (
     <>
-      <Auth />
       <Navigation />
       <Switch>
         {

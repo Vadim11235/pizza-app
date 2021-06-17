@@ -1,12 +1,13 @@
+import { useState } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { useForm } from "react-hook-form";
+import { AuthAdmin } from "../utils/auth";
 import '../css/Form.css';
 
 const Registration = () => {
     const { logIn } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
-
 
     const handler = data => {
         console.log(data);
@@ -42,6 +43,7 @@ const Registration = () => {
     );
 };
 const Login = () => {
+    const [ isLogin, setIsLogin ] = useState(false);
     const { logIn } = useAuth();
     const { privatePage } = useParams();
     const history = useHistory();
@@ -49,22 +51,27 @@ const Login = () => {
     const handlerSubmit = e => {
         e.preventDefault();
         logIn();
+        setIsLogin(true);
         history.push("/" + (privatePage || ''));
     };
+    
 
     return (
-        <form className="Form" onSubmit={e => handlerSubmit(e)}>
-            <div className="Form__input">
-                <label htmlFor="input-email">E-mail</label>
-                <input type="email" id="input-email" placeholder="E-mail" />
-            </div>
-            <div className="Form__input">
-                <label htmlFor="input-password">Пароль</label>
-                <input type="text" id="input-password" placeholder="Пароль" />
-            </div>
-            <Link className="Form__link" to="/sign-up">sign up</Link>
-            <button className="Form__button">Войти</button>
-        </form>
+        <>
+            <form className="Form" onSubmit={e => handlerSubmit(e)}>
+                <div className="Form__input">
+                    <label htmlFor="input-email">E-mail</label>
+                    <input type="email" id="input-email" placeholder="E-mail" />
+                </div>
+                <div className="Form__input">
+                    <label htmlFor="input-password">Пароль</label>
+                    <input type="text" id="input-password" placeholder="Пароль" />
+                </div>
+                <Link className="Form__link" to="/sign-up">sign up</Link>
+                <button className="Form__button">Войти</button>
+            </form>
+            {isLogin ? <AuthAdmin /> : null}
+        </>
     );
 };
 
