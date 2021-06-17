@@ -69,3 +69,6 @@
     color: #eee;
     background-color: #555;
 }
+.Form__error {
+    color: #a00;
+}
