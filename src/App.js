@@ -18,11 +18,11 @@ export default function App() {
     price: null
   });
 
-  const makeOrder = (key, value) => {
-    const copy = Object.assign({}, order);
-    copy[key] = value;
-    setOrder(copy);
-  }
+  // const makeOrder = (key, value) => {
+  //   const copy = Object.assign({}, order);
+  //   copy[key] = value;
+  //   setOrder(copy);
+  // }
 
   document.title = `PRODUCTION - ${document.title}`;
 
